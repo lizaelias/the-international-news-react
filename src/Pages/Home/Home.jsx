@@ -2,6 +2,10 @@ import React from "react";
 import Header from "../../Sheard/Header/Header";
 import Marquee from "react-fast-marquee";
 import Navbar from "../../Sheard/Navbar/Navbar";
+import LeftSideNav from "../../Sheard/LeftSideNav/LeftSideNav";
+import MiddelNav from "../MiddelNav/MiddelNav";
+import RightSideNav from "../../Sheard/RightSideNav/RightSideNav";
+
 
 const Home = () => {
   return (
@@ -17,6 +21,20 @@ const Home = () => {
       </div>
 
       <Navbar></Navbar>
+
+      
+      <div className="grid md:grid-cols-4 gap-4 mt-10">
+            <div className="col-span-1 border">
+              <LeftSideNav></LeftSideNav>
+            </div>
+             <div className="md:col-span-2 border">
+              <MiddelNav></MiddelNav>
+
+             </div>
+             <div className="col-span-1 border">
+                <RightSideNav></RightSideNav>
+             </div>
+      </div>
     </div>
   );
 };
