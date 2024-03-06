@@ -1,14 +1,28 @@
+import { useContext } from 'react';
 import zone1 from '../../../public/assets/qZone1.png'
 import zone2 from '../../../public/assets/qZone2.png'
 import zone3 from '../../../public/assets/qZone3.png'
 import { FaFacebook, FaGithub, FaGoogle, FaInstagram, FaTwitter } from "react-icons/fa";
+import { AuthContext } from '../../Providers/AuthProvide';
 
 const RightSideNav = () => {
+
+     const {signInWithGooglePopup} =useContext(AuthContext);
+
+      const handelGooleSignUp =()=>{
+        signInWithGooglePopup()
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.error(error)
+        })
+      }
     return (
         <div>
             <h1 className='text-xl font-bold'>Login With</h1>
              <div className='mt-3'>
-             <button class="btn btn-outline btn-primary w-full"><span><FaGoogle></FaGoogle></span>Login With Google</button>
+             <button onClick={handelGooleSignUp} class="btn btn-outline btn-primary w-full"><span><FaGoogle></FaGoogle></span>Login With Google</button>
              <button class="btn btn-outline btn-primary w-full mt-2"><span><FaGithub></FaGithub></span>Login With GitHub</button>
              </div>
 
