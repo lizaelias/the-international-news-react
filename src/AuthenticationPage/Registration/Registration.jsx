@@ -18,10 +18,16 @@ const Registration = () => {
         const photo = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        const checkbox = e.target.terms.checked;
 
         console.log(name, photo, email, password);
         setSuccess('')
         setError('')
+
+        if(!checkbox){
+            setError('Please Accetp terms and condition');
+            return;
+        }
 
         // createUser
         createUser(email, password)
@@ -79,8 +85,8 @@ const Registration = () => {
                            </span>
                    </div>
                     <div>
-                        <input type='checkbox' id='subscribeNews' name='subscribe' value='newsletter' />
-                        <label className='ml-2 text-xl' htmlFor='subscribeNews'>
+                        <input type='checkbox' id='subscribeNews' name='terms' value='newsletter' />
+                        <label className='ml-2 text-xl'>
                             Accept Term & Conditions
                         </label>
                     </div>

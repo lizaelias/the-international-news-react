@@ -6,6 +6,7 @@ import LeftSideNav from "../../Sheard/LeftSideNav/LeftSideNav";
 import RightSideNav from "../../Sheard/RightSideNav/RightSideNav";
 import { useLoaderData } from "react-router-dom";
 import NewsCard from "../NewsCard/NewsCard";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   
@@ -29,10 +30,10 @@ const Home = () => {
 
       
       <div className="grid md:grid-cols-4 gap-4 mt-10">
-            <div className="col-span-1 border">
+            <div className="col-span-1">
               <LeftSideNav></LeftSideNav>
             </div>
-             <div className="md:col-span-2 border">
+             <div className="md:col-span-2">
                   <h1 className="text-3xl font-bold mb-3">Dragon News Home</h1>
 
                   <div>
@@ -46,10 +47,12 @@ const Home = () => {
               
 
              </div>
-             <div className="col-span-1 border">
+             <div className="col-span-1">
                 <RightSideNav></RightSideNav>
              </div>
       </div>
+
+      <Footer></Footer>
     </div>
   );
 };
